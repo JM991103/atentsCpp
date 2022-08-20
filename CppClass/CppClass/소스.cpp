@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -56,113 +57,212 @@ using namespace std;
 //동물 농장 시뮬레이션
 //돼지, 소, 닭
 
-class Stock {
-private:
+//특수화
+//동물농장 시뮬레이션 만드는데
+//돼지, 소, 닭
+
+class Animal {
+protected:
 	string _name;
 	float _age;
 	float _weight;
 	float _height;
 
+
+
 public:
-	Stock(string name, float age, float weight, float height)
+	Animal(string name, float age, float weight, float height)
 		: _name(name), _age(age), _weight(weight), _height(height) {}
 
-	string GetName() {
-		return _name;
-	}
-
 	void Speak() {
-		cout << _name << "이 말합니다. " << endl;
+			cout << _name << "이 말합니다." << endl;
 	}
 
 	void Eat() {
-		cout << _name << "이 먹습니다." << endl;
+		cout << _name << "이 먹습니다" << endl;
 	}
 
 	void Run() {
-		cout << _name << "이 뜁니다. " << endl;
+		cout << _name << "이 뜁니다." << endl;
 	}
 
 	void info() {
-		cout << "이름: " << _name << endl;
-		cout << "나이: " << _age << endl;
-		cout << "몸무게: " << _weight << endl;
-		cout << "키: " << _height << endl;
+		cout << "이름 : " << _name << endl;
+		cout << "나이 : " << _age << endl;
+		cout << "몸무게 : " << _weight << endl;
+		cout << "키 : " << _height << endl;
 	}
-
 };
 
-class Pig : public Stock {
+class Pig : public Animal{
 public:
 	Pig(string name, float age, float weight, float height)
-		: Stock(name, age, weight, height) {}
+		:Animal(name, age, weight, height) {}
 
 	void Speak() {
-		cout << GetName() << "이 꿀꿀합니다." << endl;
+		cout << _name << "가 꿀꿀합니다." << endl;
 	}
 };
 
-class Cow : public Stock {
+class Cow : public Animal{
 public:
 	Cow(string name, float age, float weight, float height)
-		: Stock(name, age, weight, height) {}
+		:Animal(name, age, weight, height) {}
 
 	void Speak() {
-		cout << GetName() << "이 음매합니다." << endl;
-	}
-
-};
-
-class Horse : public Stock {
-public:
-	Horse(string name, float age, float weight, float height)
-		: Stock(name, age, weight, height) {}
-
-	void Speak() {
-		cout << GetName() << "이 히잉합니다." << endl;
+		cout << _name << "이 음매합니다." << endl;
 	}
 };
 
-class Chicken : public Stock {
+class Chicken : public Animal {
 private:
 	bool _isFly;
 
 	void Fly() {
-		cout << GetName() << "이 납니다." << endl;
+		cout << _name << "이 납니다." << endl;
 	}
-
 public:
-	Chicken(string name, float age, float weight, float height, bool isFly)
-		: Stock(name, age, weight, height), _isFly(isFly) {}
+	Chicken(string name, float age, float weight, float height, bool _isFly)
+		:Animal(name, age, weight, height, _isFly) {}
 
 	void Speak() {
-		cout << GetName() << "이 꼬끼오합니다." << endl;
+		cout << _name << "이 꼬끼오합니다." << endl;
 	}
-
 
 	void Run() {
-		if (_isFly) {
+		if (_isFly)
+		{
 			Fly();
 		}
-		else {
-			cout << GetName() << "이 뜁니다." << endl;
+		else
+		{
+			cout << _name << "이 뜁니다" << endl;
 		}
 	}
 
-	void info() {
-		Stock::info();
-		if (_isFly) {
-			cout << "종류: 나는 닭" << endl;
-		}
-		else {
-			cout << "종류: 못나는 닭" << endl;
-		}
+};
+
+class Dolphin : public Animal {
+private:
+	void Swim() {
+		cout << _name << "이 헤엄칩니다." << endl;
+	}
+public:
+	Dolphin(string name, float age, float weight, float height)
+		:Animal(name, age, weight, height) {}
+
+	void Speak() {
+		cout << _name << "이 끽끽합니다." << endl;
+	}
+	void Run() {
+		Swim();
 	}
 };
 
-
-
-
+//class Stock {
+//private:
+//	string _name;
+//	float _age;
+//	float _weight;
+//	float _height;
+//
+//public:
+//	Stock(string name, float age, float weight, float height)
+//		: _name(name), _age(age), _weight(weight), _height(height) {}
+//
+//	string GetName() {
+//		return _name;
+//	}
+//
+//	void Speak() {
+//		cout << _name << "이 말합니다. " << endl;
+//	}
+//
+//	void Eat() {
+//		cout << _name << "이 먹습니다." << endl;
+//	}
+//
+//	void Run() {
+//		cout << _name << "이 뜁니다. " << endl;
+//	}
+//
+//	void info() {
+//		cout << "이름: " << _name << endl;
+//		cout << "나이: " << _age << endl;
+//		cout << "몸무게: " << _weight << endl;
+//		cout << "키: " << _height << endl;
+//	}
+//
+//};
+//
+//class Pig : public Stock {
+//public:
+//	Pig(string name, float age, float weight, float height)
+//		: Stock(name, age, weight, height) {}
+//
+//	void Speak() {
+//		cout << GetName() << "이 꿀꿀합니다." << endl;
+//	}
+//};
+//
+//class Cow : public Stock {
+//public:
+//	Cow(string name, float age, float weight, float height)
+//		: Stock(name, age, weight, height) {}
+//
+//	void Speak() {
+//		cout << GetName() << "이 음매합니다." << endl;
+//	}
+//
+//};
+//
+//class Chicken : public Stock {
+//private:
+//	bool _isFly;
+//
+//	void Fly() {
+//		cout << GetName() << "이 납니다." << endl;
+//	}
+//
+//public:
+//	Chicken(string name, float age, float weight, float height, bool isFly)
+//		: Stock(name, age, weight, height), _isFly(isFly) {}
+//
+//	void Speak() {
+//		cout << GetName() << "이 꼬끼오합니다." << endl;
+//	}
+//
+//
+//	void Run() {
+//		if (_isFly) {
+//			Fly();
+//		}
+//		else {
+//			cout << GetName() << "이 뜁니다." << endl;
+//		}
+//	}
+//
+//	void info() {
+//		Stock::info();
+//		if (_isFly) {
+//			cout << "종류: 나는 닭" << endl;
+//		}
+//		else {
+//			cout << "종류: 못나는 닭" << endl;
+//		}
+//	}
+//
+//};
+//
+//class Horse : public Stock {
+//public:
+//	Horse(string name, float age, float weight, float height)
+//		: Stock(name, age, weight, height) {}
+//
+//	void Speak() {
+//		cout << GetName() << "이 히잉합니다." << endl;
+//	}
+//};
 
 //int global = 100;  //외부변수, 전역변수
 //int SetScore(int value) {
@@ -225,7 +325,7 @@ int main()
 	//}
 	//delete[] parray;	//동적객체 배열 할당 해제..
 
-	Cow cow("소", 2.2f, 200.0f, 1.5f);
+	/*Cow cow("소", 2.2f, 200.0f, 1.5f);
 	Pig pig("돼지", 2.5f, 150.0f, 1.3f);
 	Chicken flyChicken("나는닭", 0.5f, 2.5f, 0.3f, true);
 	Chicken notFlyChicken("못나는닭", 0.5f, 2.5f, 0.3f, false);
@@ -252,8 +352,32 @@ int main()
 	cout << endl;
 	
 	horse.Speak();
-	horse.Run();
+	horse.Run();*/
+	
+	Cow cow("소", 1.2f, 230.0f, 1.8f);
+	Pig pig("돼지", 1.2f, 230.0f, 1.8f);
+	Chicken notFlyChicken("못나는 닭", 1.2f, 230.0f, 1.8f, false);
+	Chicken FlyChicken("나는 닭", 1.2f, 230.0f, 1.8f, true);
+	Dolphin dolphin("돌고래", 2.3f, 200.0f, 1.5f);
 
+	cow.Speak();
+	cow.Run();
+
+	cout << endl;
+	pig.Speak();
+	pig.Run();
+
+	cout << endl;
+	notFlyChicken.Speak();
+	notFlyChicken.Run();
+
+	cout << endl;
+	FlyChicken.Speak();
+	FlyChicken.Run();
+
+	cout << endl;
+	dolphin.Speak();
+	dolphin.Run();
 
 	return 0;
 }
