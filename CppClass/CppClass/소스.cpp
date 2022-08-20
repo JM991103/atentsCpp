@@ -56,7 +56,7 @@ using namespace std;
 //동물 농장 시뮬레이션
 //돼지, 소, 닭
 
-class Pig {
+class Stock {
 private:
 	string _name;
 	float _age;
@@ -64,80 +64,15 @@ private:
 	float _height;
 
 public:
-	Pig(string name, float age, float weight, float height)
+	Stock(string name, float age, float weight, float height)
 		: _name(name), _age(age), _weight(weight), _height(height) {}
 
-	void Speak() {
-		cout << _name <<"이 꿀꿀합니다." << endl;
+	string GetName() {
+		return _name;
 	}
-
-	void Eat() {
-		cout << _name <<"이 먹습니다." << endl;
-	}
-	
-	void Run() {
-		cout << _name <<"이 뜁니다.." << endl;
-	}
-	
-	void info() {
-		cout << "이름 : " << _name <<endl;
-		cout << "나이 : " << _age << endl;
-		cout << "몸무게 : " << _weight << endl;
-		cout << "키 : " << _height << endl;
-	}
-
-};
-
-class Cow {
-private:
-	string _name;
-	float _age;
-	float _weight;
-	float _height;
-
-public:
-	Cow(string name, float age, float weight, float height)
-		: _name(name), _age(age), _weight(weight), _height(height) {}
 
 	void Speak() {
-		cout << _name << "가 음머어합니다." << endl;
-	}
-
-	void Eat() {
-		cout << _name << "가 먹습니다." << endl;
-	}
-
-	void Run() {
-		cout << _name << "가 뜁니다.." << endl;
-	}
-
-	void info() {
-		cout << "이름 : " << _name << endl;
-		cout << "나이 : " << _age << endl;
-		cout << "몸무게 : " << _weight << endl;
-		cout << "키 : " << _height << endl;
-	}
-
-};
-
-class Chicken {
-private:
-	string _name;
-	float _age;
-	float _weight;
-	float _height;
-	bool _isFly;
-
-	void Fly() {
-		cout << _name << "이 납니다." << endl;
-	}
-
-public:
-	Chicken(string name, float age, float weight, float height, bool isFly)
-		: _name(name), _age(age), _weight(weight), _height(height), _isFly(isFly) {}
-
-	void Speak() {
-		cout << _name << "이 꼬끼오합니다.." << endl;
+		cout << _name << "이 말합니다. " << endl;
 	}
 
 	void Eat() {
@@ -145,31 +80,86 @@ public:
 	}
 
 	void Run() {
-		if (_isFly)
-		{
+		cout << _name << "이 뜁니다. " << endl;
+	}
+
+	void info() {
+		cout << "이름: " << _name << endl;
+		cout << "나이: " << _age << endl;
+		cout << "몸무게: " << _weight << endl;
+		cout << "키: " << _height << endl;
+	}
+
+};
+
+class Pig : public Stock {
+public:
+	Pig(string name, float age, float weight, float height)
+		: Stock(name, age, weight, height) {}
+
+	void Speak() {
+		cout << GetName() << "이 꿀꿀합니다." << endl;
+	}
+};
+
+class Cow : public Stock {
+public:
+	Cow(string name, float age, float weight, float height)
+		: Stock(name, age, weight, height) {}
+
+	void Speak() {
+		cout << GetName() << "이 음매합니다." << endl;
+	}
+
+};
+
+class Horse : public Stock {
+public:
+	Horse(string name, float age, float weight, float height)
+		: Stock(name, age, weight, height) {}
+
+	void Speak() {
+		cout << GetName() << "이 히잉합니다." << endl;
+	}
+};
+
+class Chicken : public Stock {
+private:
+	bool _isFly;
+
+	void Fly() {
+		cout << GetName() << "이 납니다." << endl;
+	}
+
+public:
+	Chicken(string name, float age, float weight, float height, bool isFly)
+		: Stock(name, age, weight, height), _isFly(isFly) {}
+
+	void Speak() {
+		cout << GetName() << "이 꼬끼오합니다." << endl;
+	}
+
+
+	void Run() {
+		if (_isFly) {
 			Fly();
 		}
-		else
-		{
-			cout << _name << "이 뜁니다." << endl;
+		else {
+			cout << GetName() << "이 뜁니다." << endl;
 		}
 	}
 
 	void info() {
-		cout << "이름 : " << _name << endl;
-		cout << "나이 : " << _age << endl;
-		cout << "몸무게 : " << _weight << endl;
-		cout << "키 : " << _height << endl;
-
-		if (_isFly)
-		{
-			cout << "종류 : 나는 닭" << endl;
+		Stock::info();
+		if (_isFly) {
+			cout << "종류: 나는 닭" << endl;
 		}
 		else {
-			cout << "종류 : 못나는 닭" << endl;
+			cout << "종류: 못나는 닭" << endl;
 		}
 	}
 };
+
 
 
 
@@ -239,6 +229,7 @@ int main()
 	Pig pig("돼지", 2.5f, 150.0f, 1.3f);
 	Chicken flyChicken("나는닭", 0.5f, 2.5f, 0.3f, true);
 	Chicken notFlyChicken("못나는닭", 0.5f, 2.5f, 0.3f, false);
+	Horse horse("말", 1.3f, 180.0f, 2.0f);
 
 	cow.Speak();
 	cow.Run();
@@ -258,7 +249,10 @@ int main()
 	notFlyChicken.Speak();
 	notFlyChicken.Run();
 
-
+	cout << endl;
+	
+	horse.Speak();
+	horse.Run();
 
 
 	return 0;
