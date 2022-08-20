@@ -71,39 +71,41 @@ int main()
 	//int b = 30;
 	//float c = 1.2f;
 	//float d = 3.4f;
-
 	//int ret = add(a, b); // call addXX
 	//cout << a << " + " << b << " = " << ret << endl;
-
 	//float fret = add(c, d); // call addYY
 	//cout << c << " + " << d << " = " << fret << endl;
-	
-	int a;  //로컬변수 (지역변수), 자동변수 
-	a = 20;
-	global = 10000;
+	//int a;  //로컬변수 (지역변수), 자동변수 
+	//a = 20;
+	//global = 10000;
 
-	int* pa;	//포인터형 지정자
-	pa = new int; //동적메모리공간을 할당
-	*pa = 1000; // * 포인터 연산자, 주소값에 할당 받은 공간에 접솔할 때 사용
-	cout << "*pa" << *pa << endl;
-	delete pa; //동적메모리 공간으 반환처리
+	//int* pa;	//포인터형 지정자
+	//pa = new int; //동적메모리공간을 할당
+	//*pa = 1000; // * 포인터 연산자, 주소값에 할당 받은 공간에 접솔할 때 사용
+	//cout << "*pa" << *pa << endl;
+	//delete pa; //동적메모리 공간으 반환처리
+
+	//int count = 0;
+	//cout << "필요한 정수 의 갯수를 입력하세요 : " << endl;
+	//cin >> count;
+	//int* parray = new int[count];	//동적배열
+	//for (int i =0; i < count; i++)
+	//{
+	//	parray[i] = i;
+	//}
+	//for (int i = 0; i < count; i++)
+	//{
+	//	cout << "parray{" << i << "] = " << parray[i] << endl;
+	//}
+	//
+	//delete[] parray;	//동적배열 반환
 
 
-	int count = 0;
-	cout << "필요한 정수 의 갯수를 입력하세요 : " << endl;
-	cin >> count;
 
-	int* parray = new int[count];
 
-	for (int i =0; i < count; i++)
-	{
-		parray[i] = i;
-	}
 
-	for (int i = 0; i < count; i++)
-	{
-		cout << "parray{" << i << "] = " << parray[i] << endl;
-	}
+
+
 
 	return 0;
 }
