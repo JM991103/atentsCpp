@@ -1,2 +1,2 @@
 ﻿  소스.cpp
-C:\Users\pc01\Documents\GitHub\atentsCpp\CppClass\CppClass\소스.cpp(126,10): error C2661: 'Animal::Animal': 오버로드된 함수에서 5개의 인수를 사용하지 않습니다.
+  CppClass.vcxproj -> C:\Users\pc01\Documents\GitHub\atentsCpp\CppClass\x64\Debug\CppClass.exe
