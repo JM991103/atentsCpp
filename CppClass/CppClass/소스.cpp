@@ -34,10 +34,11 @@ private:
 	int _grade;
 
 public: 
+	Student() {} //기본 생성자
 	Student(string name, int age, int grade)
 		:_name(name), _age(age), _grade(grade) {}
 	
-	void init(string name, int age, int grade) {
+	void init(string name, int age, int grade) { 
 		_name = name;
 		_age = age;
 		_grade = grade;
@@ -100,12 +101,24 @@ int main()
 	//
 	//delete[] parray;	//동적배열 반환
 
+	Student* pa= new Student("monster", 10, 3); //동적객체
 
+	pa->info(); //주소값으로 클래스의 멤버에 접근할때는 화살표 연산자를 사용한다.
 
+	delete pa; //동적객체 반환
 
+	Student * parray = new Student[5];	//동적객체 배열 기본 생성자가 필요함
 
+	for (int i = 0; i <5; i++)
+	{
+		parray[i].init("monster", i, i);	//init클래스에 매개변수로 값을 넣음
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		parray[i].info();	//info클래스에 들어있는 출력문을 실행 함
+	}
 
-
+	delete[] parray;	//동적객체 배열 할당 해제..
 
 	return 0;
 }
