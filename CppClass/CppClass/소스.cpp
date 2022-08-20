@@ -430,6 +430,7 @@ int main()
 	Parent* pa = &b;   // 업캐스팅
 	pa->_value1 = 100;
 	cout << "pa->_value1 = " << pa->_value1 << endl;
+
 	
 	Child* paa = (Child*)pa;   // 다운캐스팅
 	cout << "paa->_value1 = " << paa->_value1 << endl;
