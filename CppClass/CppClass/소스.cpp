@@ -27,41 +27,161 @@ using namespace std;
 //	return a + b + c;
 //}
 
-class Student {
-private:
-	string _name;	//멤버변수
-	int _age;
-	int _grade;
+//class Student {
+//private:
+//	string _name;	//멤버변수
+//	int _age;
+//	int _grade;
+//
+//public: 
+//	Student() {} //기본 생성자
+//	Student(string name, int age, int grade)
+//		:_name(name), _age(age), _grade(grade) {}
+//	
+//	void init(string name, int age, int grade) { 
+//		_name = name;
+//		_age = age;
+//		_grade = grade;
+//	}
+//
+//	void info() {
+//		cout << "이름 : " << _name << endl;
+//		cout << "나이 : " << _age << endl;
+//		cout << "학년 : " << _grade << endl;
+//	}
+//
+//};
 
-public: 
-	Student() {} //기본 생성자
-	Student(string name, int age, int grade)
-		:_name(name), _age(age), _grade(grade) {}
+// 상속
+//동물 농장 시뮬레이션
+//돼지, 소, 닭
+
+class Pig {
+private:
+	string _name;
+	float _age;
+	float _weight;
+	float _height;
+
+public:
+	Pig(string name, float age, float weight, float height)
+		: _name(name), _age(age), _weight(weight), _height(height) {}
+
+	void Speak() {
+		cout << _name <<"이 꿀꿀합니다." << endl;
+	}
+
+	void Eat() {
+		cout << _name <<"이 먹습니다." << endl;
+	}
 	
-	void init(string name, int age, int grade) { 
-		_name = name;
-		_age = age;
-		_grade = grade;
+	void Run() {
+		cout << _name <<"이 뜁니다.." << endl;
+	}
+	
+	void info() {
+		cout << "이름 : " << _name <<endl;
+		cout << "나이 : " << _age << endl;
+		cout << "몸무게 : " << _weight << endl;
+		cout << "키 : " << _height << endl;
+	}
+
+};
+
+class Cow {
+private:
+	string _name;
+	float _age;
+	float _weight;
+	float _height;
+
+public:
+	Cow(string name, float age, float weight, float height)
+		: _name(name), _age(age), _weight(weight), _height(height) {}
+
+	void Speak() {
+		cout << _name << "가 음머어합니다." << endl;
+	}
+
+	void Eat() {
+		cout << _name << "가 먹습니다." << endl;
+	}
+
+	void Run() {
+		cout << _name << "가 뜁니다.." << endl;
 	}
 
 	void info() {
 		cout << "이름 : " << _name << endl;
 		cout << "나이 : " << _age << endl;
-		cout << "학년 : " << _grade << endl;
+		cout << "몸무게 : " << _weight << endl;
+		cout << "키 : " << _height << endl;
 	}
 
 };
 
+class Chicken {
+private:
+	string _name;
+	float _age;
+	float _weight;
+	float _height;
+	bool _isFly;
 
-int global = 100;  //외부변수, 전역변수
+	void Fly() {
+		cout << _name << "이 납니다." << endl;
+	}
 
-int SetScore(int value) {
-	static int score = 0; //로컬변수(지역변수), 정적변수
-	global = 1000;
-	score += value;
+public:
+	Chicken(string name, float age, float weight, float height, bool isFly)
+		: _name(name), _age(age), _weight(weight), _height(height), _isFly(isFly) {}
 
-	return score;
-}
+	void Speak() {
+		cout << _name << "이 꼬끼오합니다.." << endl;
+	}
+
+	void Eat() {
+		cout << _name << "이 먹습니다." << endl;
+	}
+
+	void Run() {
+		if (_isFly)
+		{
+			Fly();
+		}
+		else
+		{
+			cout << _name << "이 뜁니다." << endl;
+		}
+	}
+
+	void info() {
+		cout << "이름 : " << _name << endl;
+		cout << "나이 : " << _age << endl;
+		cout << "몸무게 : " << _weight << endl;
+		cout << "키 : " << _height << endl;
+
+		if (_isFly)
+		{
+			cout << "종류 : 나는 닭" << endl;
+		}
+		else {
+			cout << "종류 : 못나는 닭" << endl;
+		}
+	}
+};
+
+
+
+
+//int global = 100;  //외부변수, 전역변수
+//int SetScore(int value) {
+//	static int score = 0; //로컬변수(지역변수), 정적변수
+//	global = 1000;
+//	score += value;
+//
+//	return score;
+//}
 
 //동적객체
 //변수의 종류
@@ -78,7 +198,7 @@ int main()
 	//cout << c << " + " << d << " = " << fret << endl;
 	//int a;  //로컬변수 (지역변수), 자동변수 
 	//a = 20;
-	//global = 10000;
+	//global = 10000; 
 
 	//int* pa;	//포인터형 지정자
 	//pa = new int; //동적메모리공간을 할당
@@ -101,24 +221,45 @@ int main()
 	//
 	//delete[] parray;	//동적배열 반환
 
-	Student* pa= new Student("monster", 10, 3); //동적객체
+	//Student* pa= new Student("monster", 10, 3); //동적객체
+	//pa->info(); //주소값으로 클래스의 멤버에 접근할때는 화살표 연산자를 사용한다.
+	//delete pa; //동적객체 반환
+	//Student * parray = new Student[5];	//동적객체 배열 기본 생성자가 필요함
+	//for (int i = 0; i <5; i++)
+	//{
+	//	parray[i].init("monster", i, i);	//init클래스에 매개변수로 값을 넣음
+	//}
+	//for (int i = 0; i < 5; i++)
+	//{
+	//	parray[i].info();	//info클래스에 들어있는 출력문을 실행 함
+	//}
+	//delete[] parray;	//동적객체 배열 할당 해제..
 
-	pa->info(); //주소값으로 클래스의 멤버에 접근할때는 화살표 연산자를 사용한다.
+	Cow cow("소", 2.2f, 200.0f, 1.5f);
+	Pig pig("돼지", 2.5f, 150.0f, 1.3f);
+	Chicken flyChicken("나는닭", 0.5f, 2.5f, 0.3f, true);
+	Chicken notFlyChicken("못나는닭", 0.5f, 2.5f, 0.3f, false);
 
-	delete pa; //동적객체 반환
+	cow.Speak();
+	cow.Run();
 
-	Student * parray = new Student[5];	//동적객체 배열 기본 생성자가 필요함
+	cout << endl;
 
-	for (int i = 0; i <5; i++)
-	{
-		parray[i].init("monster", i, i);	//init클래스에 매개변수로 값을 넣음
-	}
-	for (int i = 0; i < 5; i++)
-	{
-		parray[i].info();	//info클래스에 들어있는 출력문을 실행 함
-	}
+	pig.Speak();
+	pig.Run();
 
-	delete[] parray;	//동적객체 배열 할당 해제..
+	cout << endl;
+
+	flyChicken.Speak();
+	flyChicken.Run();
+
+	cout << endl;
+
+	notFlyChicken.Speak();
+	notFlyChicken.Run();
+
+
+
 
 	return 0;
 }
