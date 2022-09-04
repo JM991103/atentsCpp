@@ -19,7 +19,7 @@ int main() {
 	int a = 20;
 	int b = 30;
 
-	int max = (a > b) ? a : b;
+	int max = (a > b) ? a : b;	//삼(3)항 연산자
 	printf("a와 b중에 큰 값은 : %d\n", max);
 
 	(a > b) ? printf("a가 b보다 크다") : printf("a가 b보다 작다");
