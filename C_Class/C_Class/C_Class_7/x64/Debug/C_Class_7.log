@@ -1,0 +1,9 @@
+﻿  소스.c
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_7\소스.c(45,9): warning C4142: 'a': 형식이 재정의되었지만 심각하지는 않습니다.
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_7\소스.c(4): message : 'a' 선언을 참조하십시오.
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_7\소스.c(45,7): error C2374: 'a': 재정의. 여러 번 초기화했습니다.
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_7\소스.c(4): message : 'a' 선언을 참조하십시오.
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_7\소스.c(46,9): warning C4142: 'b': 형식이 재정의되었지만 심각하지는 않습니다.
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_7\소스.c(5): message : 'b' 선언을 참조하십시오.
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_7\소스.c(46,7): error C2374: 'b': 재정의. 여러 번 초기화했습니다.
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_7\소스.c(5): message : 'b' 선언을 참조하십시오.
