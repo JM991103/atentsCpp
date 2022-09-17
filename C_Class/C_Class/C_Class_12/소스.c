@@ -40,9 +40,9 @@ int main() {
             printf("goto a = %d\n", a);
             a++;
         }
-
     }
 
 LoopExit:;
+
     return 0;
 }
