@@ -1,0 +1,5 @@
+﻿  소스.c
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_17\소스.c(14,13): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_17\소스.c(13,23): warning C4101: 'b' :참조되지 않은 지역 변수입니다.
+C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_17\소스.c(15): warning C4716: 'Something': 값을 반환해야 합니다.
+  C_Class_17.vcxproj -> C:\Users\pc01\Documents\GitHub\atentsCpp\C_Class\C_Class\x64\Debug\C_Class_17.exe
