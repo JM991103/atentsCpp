@@ -1,3 +1,0 @@
-﻿  소스.c
-C:\Users\cwe\Documents\GitHub\atents\atentsCpp\C_Class\C_Class\C_Class_27\소스.c(12): warning C4172: 지역 변수 또는 임시: score의 주소를 반환하고 있습니다.
-  C_Class_27.vcxproj -> C:\Users\cwe\Documents\GitHub\atents\atentsCpp\C_Class\C_Class\x64\Debug\C_Class_27.exe
