@@ -1,0 +1,20 @@
+﻿  소스.c
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(23,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(25,6): error C2086: 'int a': 재정의
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(7): message : 'a' 선언을 참조하십시오.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(27,6): error C2374: 'ret': 재정의. 여러 번 초기화했습니다.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(12): message : 'ret' 선언을 참조하십시오.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(63,6): error C2086: 'int a': 재정의
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(7): message : 'a' 선언을 참조하십시오.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(64,6): error C2086: 'int b': 재정의
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(9): message : 'b' 선언을 참조하십시오.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(66,4): warning C4552: '<': 식의 결과가 사용되지 않습니다.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(73,6): error C2374: 'ret': 재정의. 여러 번 초기화했습니다.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(12): message : 'ret' 선언을 참조하십시오.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(94,6): error C2086: 'int a': 재정의
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(7): message : 'a' 선언을 참조하십시오.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(95,6): error C2086: 'int b': 재정의
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(9): message : 'b' 선언을 참조하십시오.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(97,7): error C2371: 'ret': 재정의. 기본 형식이 다릅니다.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(12): message : 'ret' 선언을 참조하십시오.
+C:\Users\cwe\Documents\GitHub\atentsCpp\C_Class\C_Class\C_Class_2\소스.c(15,17): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
